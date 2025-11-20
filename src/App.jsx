@@ -32,35 +32,35 @@ export default function App() {
   const spark3 = useMemo(() => Array.from({ length: 20 }, () => 60 + Math.random() * 20), []);
 
   return (
-    <div className="relative min-h-screen bg-[#0A0E27] text-white overflow-hidden">
+    <div className="relative min-h-screen bg-[#0B0F14] text-white overflow-hidden">
       <ParticlesBackground />
 
       {/* Hero 3D Spline */}
-      <div className="absolute inset-0 z-0 opacity-70">
+      <div className="absolute inset-0 z-0 opacity-50">
         <Spline scene="https://prod.spline.design/4Zh-Q6DWWp5yPnQf/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
-      {/* Top gradient glow overlays */}
-      <div className="pointer-events-none absolute -top-40 -right-40 w-[60rem] h-[60rem] rounded-full opacity-30 blur-3xl bg-[radial-gradient(circle_at_center,#8B5CF6,transparent_60%)]" />
-      <div className="pointer-events-none absolute -bottom-40 -left-40 w-[60rem] h-[60rem] rounded-full opacity-30 blur-3xl bg-[radial-gradient(circle_at_center,#00D9FF,transparent_60%)]" />
+      {/* Top gradient glow overlays in green/gold */}
+      <div className="pointer-events-none absolute -top-40 -right-40 w-[60rem] h-[60rem] rounded-full opacity-25 blur-3xl bg-[radial-gradient(circle_at_center,#22C55E,transparent_60%)]" />
+      <div className="pointer-events-none absolute -bottom-40 -left-40 w-[60rem] h-[60rem] rounded-full opacity-25 blur-3xl bg-[radial-gradient(circle_at_center,#F59E0B,transparent_60%)]" />
 
       {/* Header */}
       <header className="relative z-10 backdrop-blur-xl/0">
         <div className="mx-auto max-w-7xl px-6 py-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 grid place-items-center shadow-[0_0_20px_rgba(0,217,255,0.35)]">
-              <Leaf className="w-5 h-5 text-[#00D9FF]" />
+            <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 grid place-items-center shadow-[0_0_20px_rgba(34,197,94,0.35)]">
+              <Leaf className="w-5 h-5 text-[#22C55E]" />
             </div>
             <div>
-              <div className="text-sm uppercase tracking-widest text-white/70">Green'Bee</div>
-              <div className="text-xs text-white/50">The best way to be</div>
+              <div className="text-sm uppercase tracking-widest text-white/80">Green'Bee</div>
+              <div className="text-xs text-white/60">Eco premium transport</div>
             </div>
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            <NeonBadge color="cyan">Eco-premium</NeonBadge>
-            <NeonBadge color="violet">24/7</NeonBadge>
-            <NeonBadge color="rose">Carbon Smart</NeonBadge>
+            <NeonBadge color="green">Eco</NeonBadge>
+            <NeonBadge color="gold">Premium</NeonBadge>
+            <NeonBadge color="white">Responsable</NeonBadge>
           </div>
         </div>
       </header>
@@ -75,17 +75,16 @@ export default function App() {
               transition={{ duration: 0.6 }}
               className="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]"
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00D9FF] via-[#8B5CF6] to-[#FF006E] drop-shadow-[0_0_20px_rgba(0,217,255,0.35)]">
-                THE BEST WAY TO BE
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#22C55E] via-[#F59E0B] to-white drop-shadow-[0_0_20px_rgba(34,197,94,0.35)]">
+                Votre chauffeur éco‑responsable
               </span>
             </motion.h1>
-            <p className="mt-4 text-white/70 max-w-xl">
-              Chauffeur premium éco-responsable. Service haute technologie, discret et durable.
-              Réservez en quelques secondes et suivez vos économies de CO₂.
+            <p className="mt-4 text-white/80 max-w-xl">
+              Déplacements bas carbone, confort haut de gamme. Réservez en quelques secondes et suivez vos économies de CO₂.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <GlowButton>Réserver maintenant</GlowButton>
-              <button className="px-5 py-3 rounded-xl border border-white/15 text-white/80 hover:text-white hover:shadow-[0_0_25px_rgba(139,92,246,0.35)] transition-colors">Découvrir</button>
+              <button className="px-5 py-3 rounded-xl border border-white/15 text-white/80 hover:text-white hover:shadow-[0_0_25px_rgba(245,158,11,0.35)] transition-colors">Découvrir</button>
             </div>
           </div>
 
@@ -93,50 +92,50 @@ export default function App() {
           <HolographicCard className="lg:ml-auto w-full">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-semibold">Réservation instantanée</h3>
-              <NeonBadge color="cyan" className="text-xs">Eco • Premium</NeonBadge>
+              <NeonBadge color="green" className="text-xs">Eco • Premium</NeonBadge>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               <div>
                 <label className="text-sm text-white/70">Départ</label>
                 <input value={pickup} onChange={e=>setPickup(e.target.value)}
-                  className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00D9FF]/60 focus:border-transparent placeholder:text-white/40" placeholder="Adresse de départ" />
+                  className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500/60 focus:border-transparent placeholder:text-white/40" placeholder="Adresse de départ" />
               </div>
               <div>
                 <label className="text-sm text-white/70">Arrivée</label>
                 <input value={dropoff} onChange={e=>setDropoff(e.target.value)}
-                  className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/60 focus:border-transparent placeholder:text-white/40" placeholder="Adresse d'arrivée" />
+                  className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500/60 focus:border-transparent placeholder:text-white/40" placeholder="Adresse d'arrivée" />
               </div>
               <div>
                 <label className="text-sm text-white/70">Distance (km)</label>
                 <input type="number" value={distance} min={1} max={250} onChange={e=>setDistance(Number(e.target.value))}
-                  className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00D9FF]/60" />
+                  className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500/60" />
               </div>
               <div>
                 <label className="text-sm text-white/70">Passagers</label>
                 <input type="number" value={passengers} min={1} max={6} onChange={e=>setPassengers(Number(e.target.value))}
-                  className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF006E]/60" />
+                  className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500/60" />
               </div>
             </div>
 
             <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-3">
               <HolographicCard hover={false} className="p-4">
                 <div className="flex items-center gap-3">
-                  <Car className="w-5 h-5 text-[#00D9FF]" />
+                  <Car className="w-5 h-5 text-[#22C55E]" />
                   <div className="text-sm text-white/70">Estimation</div>
                 </div>
                 <div className="mt-2 text-2xl font-bold"><Currency value={estimate.price} /></div>
               </HolographicCard>
               <HolographicCard hover={false} className="p-4">
                 <div className="flex items-center gap-3">
-                  <Leaf className="w-5 h-5 text-[#8B5CF6]" />
+                  <Leaf className="w-5 h-5 text-[#F59E0B]" />
                   <div className="text-sm text-white/70">CO₂ économisé</div>
                 </div>
                 <div className="mt-2 text-2xl font-bold">{estimate.co2SavedKg.toFixed(1)} kg</div>
               </HolographicCard>
               <HolographicCard hover={false} className="p-4">
                 <div className="flex items-center gap-3">
-                  <Gauge className="w-5 h-5 text-[#FF006E]" />
+                  <Gauge className="w-5 h-5 text-white" />
                   <div className="text-sm text-white/70">Confort</div>
                 </div>
                 <div className="mt-2 text-2xl font-bold">XL Premium</div>
@@ -159,10 +158,10 @@ export default function App() {
                 <div className="text-sm text-white/70">BeePoints</div>
                 <div className="mt-1 text-2xl font-bold">12,480</div>
               </div>
-              <TrendingUp className="text-[#00D9FF]" />
+              <TrendingUp className="text-[#22C55E]" />
             </div>
             <div className="mt-2">
-              <SparklineChart data={spark1} colorFrom="#00D9FF" colorTo="#8B5CF6" />
+              <SparklineChart data={spark1} colorFrom="#22C55E" colorTo="#F59E0B" />
             </div>
           </HolographicCard>
 
@@ -170,7 +169,7 @@ export default function App() {
             <div className="text-sm text-white/70">CO₂ total économisé</div>
             <div className="mt-1 text-2xl font-bold">1.2 t</div>
             <div className="mt-2">
-              <SparklineChart data={spark2} colorFrom="#8B5CF6" colorTo="#FF006E" />
+              <SparklineChart data={spark2} colorFrom="#16A34A" colorTo="#FFFFFF" />
             </div>
           </HolographicCard>
 
@@ -178,7 +177,7 @@ export default function App() {
             <div className="text-sm text-white/70">Trajets ce mois</div>
             <div className="mt-1 text-2xl font-bold">48</div>
             <div className="mt-2">
-              <SparklineChart data={spark3} colorFrom="#00D9FF" colorTo="#FF006E" />
+              <SparklineChart data={spark3} colorFrom="#22C55E" colorTo="#F59E0B" />
             </div>
           </HolographicCard>
 
@@ -193,13 +192,13 @@ export default function App() {
       {/* Footer */}
       <footer className="relative z-10 border-t border-white/10 bg-black/10">
         <div className="mx-auto max-w-7xl px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-white/60 text-sm">© {new Date().getFullYear()} Green'Bee • The best way to be</div>
-          <div className="flex items-center gap-3 text-xs text-white/50">
-            <span>Eco</span>
+          <div className="text-white/70 text-sm">© {new Date().getFullYear()} Green'Bee • Mobilité responsable</div>
+          <div className="flex items-center gap-3 text-xs text-white/60">
+            <span>Éco</span>
             <span className="w-1 h-1 rounded-full bg-white/30" />
             <span>Premium</span>
             <span className="w-1 h-1 rounded-full bg-white/30" />
-            <span>AI</span>
+            <span>Blanc & Doré</span>
           </div>
         </div>
       </footer>
