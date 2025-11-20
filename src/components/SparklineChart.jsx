@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { AreaChart, Area, ResponsiveContainer, LinearGradient, Tooltip } from 'recharts';
+import { AreaChart, Area, ResponsiveContainer, Tooltip } from 'recharts';
 
 export default function SparklineChart({ data = [], colorFrom = '#00D9FF', colorTo = '#8B5CF6' }) {
   const formatted = useMemo(() => data.map((v, i) => ({ i, v })), [data]);
